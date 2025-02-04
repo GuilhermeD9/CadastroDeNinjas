@@ -24,6 +24,4 @@ public class MissoesModel {
     @OneToMany(mappedBy = "missoes")
     @JsonIgnore
     private List<NinjaModel> ninja;
-
-
 }
