@@ -26,7 +26,7 @@ public class MissoesController {
 
     // POST -- Mandar uma requisição para criar as missoes
     @PostMapping("/criar")
-    public MissoesModel criarMissao(@PathVariable MissoesModel missao) {
+    public MissoesDTO criarMissao(@PathVariable MissoesDTO missao) {
         return missoesService.criarMissao(missao);
     }
     // PUT -- Mandar uma requisição para alterar as missoes
