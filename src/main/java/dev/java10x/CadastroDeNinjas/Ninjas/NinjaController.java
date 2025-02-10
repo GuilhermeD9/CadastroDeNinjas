@@ -34,6 +34,7 @@ public class NinjaController {
 
     // Mostrar todos os ninjas (READ)
     @GetMapping("/listar")
+    @Operation(summary = "Lista todos os ninjas", description = "Rota lista todos os ninjas da aplicação")
     public ResponseEntity<List<NinjaDTO>> listarTodosOsNinjas() {
         List<NinjaDTO> ninjas = ninjaService.listarNinjas();
         return ResponseEntity.ok(ninjas);
@@ -79,6 +80,11 @@ public class NinjaController {
 
     // Deletar Ninja (DELETE)
     @DeleteMapping("/deletar/{id}")
+    @Operation(summary = "Deleta o ninja por ID", description = "Rota deleta um ninja pelo seu ID")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Ninja deletado com sucesso"),
+            @ApiResponse(responseCode = "404", description = "Ninja não encontrado, não foi possível deletar")
+    })
     public ResponseEntity<String> deletarNinjaPorId(@PathVariable Long id) {
         if (ninjaService.listarNinjasPorId(id) != null) {
             ninjaService.deletarNinjaPorId(id);
