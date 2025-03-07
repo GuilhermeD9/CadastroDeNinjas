@@ -19,9 +19,9 @@ public class SwaggerConfig {
         contact.email("sgsouza.173@gmail.com");
 
         Info info = new Info();
-        info.title("MovieFlix");
+        info.title("Cadastro Ninja");
         info.version("v1");
-        info.description("Aplicação para gerenciamento de catálogo de filmes");
+        info.description("Aplicação para gerenciamento de Ninjas");
         info.contact(contact);
 
         return new OpenAPI()
